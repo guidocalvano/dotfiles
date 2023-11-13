@@ -1,0 +1,16 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: []
+- link: 
+    ~/.tmux.conf: files/tmux.conf
+    ~/.zshrc: files/zshrc
+- create:
+  - ~/.antigen
+  - ~/.tmux/plugins
+- shell: 
+  - [curl -L git.io/antigen > ~/.antigen/antigen.zsh, Installing antigen]
+  - [git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf, downloading fzf]
+  - [~/.fzf/install, Installing fzf binary]
+  - [git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm, Cloning tmux plugin manager]
